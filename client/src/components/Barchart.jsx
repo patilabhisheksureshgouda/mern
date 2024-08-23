@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { fetchBarChart } from '../api';
+import './Barchart.css';
 
 
 const BarChart = ({ month }) => {
@@ -26,7 +27,7 @@ const BarChart = ({ month }) => {
   };
 
   return (
-    <div>
+    <div className="chart-container">
       <h3>Bar Chart for {month}</h3>
       <Bar data={chartData} />
     </div>

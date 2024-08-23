@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchTransactions } from '../api';
+import './Transaction.css';
 
 const TransactionsTable = ({ month }) => {
   const [transactions, setTransactions] = useState([]);
@@ -14,7 +15,7 @@ const TransactionsTable = ({ month }) => {
   }, [month, search, page, perPage]);
 
   return (
-    <div>
+    <div className="table-container">
       <input
         type="text"
         value={search}
@@ -45,8 +46,12 @@ const TransactionsTable = ({ month }) => {
           ))}
         </tbody>
       </table>
-      <button onClick={() => setPage(page - 1)} disabled={page === 1}>Previous</button>
-      <button onClick={() => setPage(page + 1)}>Next</button>
+      <button onClick={() => setPage(page - 1)} disabled={page === 1}>
+        Previous
+      </button>
+      <button onClick={() => setPage(page + 1)}>
+        Next
+      </button>
     </div>
   );
 };

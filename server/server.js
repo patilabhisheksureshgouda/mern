@@ -13,7 +13,7 @@ const corsOptions = {
   optionsSuccessStatus: 200
 };
 
-app.use(cors(corsOptions)); // Enable CORS with the specified options
+app.use(cors('*')); // Enable CORS with the specified options
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, {

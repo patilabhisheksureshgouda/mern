@@ -1,6 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { Pie } from 'react-chartjs-2';
 import { fetchPieChart } from '../api';
+import './Piechart.css';
+// import {
+//   Chart as ChartJS,
+//   CategoryScale, // Required for "category" scale
+//   LinearScale,
+//   BarElement,
+//   Title,
+//   Tooltip,
+//   Legend,
+// } from 'chart.js';
+
+// import { Bar } from 'react-chartjs-2';
+
+// ChartJS.register(
+//   CategoryScale,
+//   LinearScale,
+//   BarElement,
+//   Title,
+//   Tooltip,
+//   Legend
+// );
 
 const PieChart = ({ month }) => {
   const [data, setData] = useState([]);
@@ -37,7 +58,7 @@ const PieChart = ({ month }) => {
   };
 
   return (
-    <div>
+    <div className="chart-container">
       <h3>Pie Chart for {month}</h3>
       <Pie data={chartData} />
     </div>

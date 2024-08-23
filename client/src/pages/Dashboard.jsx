@@ -3,12 +3,13 @@ import TransactionTable from '../components/TransactionTable';
 import Statistics from '../components/Statistics';
 import Barchart from '../components/Barchart';
 import Piechart from '../components/Piechart';
+import './DashBoard.css';
 
 const Dashboard = () => {
   const [month, setMonth] = useState('3');
 
   return (
-    <div>
+    <div className="dashboard-container">
       <h1>Transactions Dashboard</h1>
       <label>
         Select Month:
@@ -27,10 +28,18 @@ const Dashboard = () => {
           <option value="12">December</option>
         </select>
       </label>
-      <Statistics month={month} />
-      <Barchart month={month} />
-      <Piechart month={month} />
-      <TransactionTable month={month} />
+      <div className="dashboard-section">
+        <Statistics month={month} />
+      </div>
+      <div className="dashboard-section">
+        <Barchart month={month} />
+      </div>
+      <div className="dashboard-section">
+        <Piechart month={month} />
+      </div>
+      <div className="dashboard-section">
+        <TransactionTable month={month} />
+      </div>
     </div>
   );
 };
